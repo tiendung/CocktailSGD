@@ -6,7 +6,7 @@ from torch.nn import functional as F
 args = types.SimpleNamespace()
 args.MODEL_NAME = "./model_ckpts/rwkv4-150m-cocktail/checkpoint_300/prank_0_checkpoint.pt"
 args.tokenizer_name = "./empty_model_configs/rwkv4-150m"
-args.n_layer = 12
+args.n_layer = 16
 args.n_embd = 768
 
 context = "\nOnce upon a time, there was a little boy named Tim. Tim loved to collect things."
