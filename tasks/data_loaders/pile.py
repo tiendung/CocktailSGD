@@ -10,7 +10,7 @@ from comm.comm_utils import *
 
 
 class StreamDataset(IterableDataset):
-    default_doc_separator = ''
+    default_doc_separator = '\n</s>\n'
     def __init__(self, data, tokenizer, seq_length=1024, doc_separator=None, cycling=True):
         self.data = data
         self.tokenizer = tokenizer
