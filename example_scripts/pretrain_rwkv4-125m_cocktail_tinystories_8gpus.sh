@@ -14,7 +14,7 @@ ARGS="--model-name empty_model_configs/rwkv4-150m \
 --num-layers 16 --embedding-dim 768 --total-steps 12000 \
 --warmup-steps 50 --train-warmup-steps 50 --checkpoint-steps 300 --lr 3e-4 --seq-length 1024 \
 --batch-size 128 --micro-batch-size 128 --gradient-accumulate-step 2 --dist-url tcp://127.0.0.1:8181 \
---world-size 3 --pipeline-group-size 1 --data-group-size 8 --net-interface lo --fp16 \
+--world-size 8 --pipeline-group-size 1 --data-group-size 8 --net-interface lo --fp16 \
 --dp-backend gloo --dp-mode cocktail_sgd --pp-mode gpipe --profiling no-profiling"
 echo
 echo ${ARGS}
