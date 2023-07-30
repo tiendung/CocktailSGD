@@ -7,7 +7,7 @@ export SHOW_DATA=0
 #
 ARGS="--model-name empty_model_configs/rwkv4-150m \
 --tokenizer-name empty_model_configs/rwkv4-150m \
---project-name rwkv4-150m-cocktail --model-type rwkv4 --optimizer adam --seed 42 \
+--project-name rwkv4-150m-cocktail --model-type rwkv4 --optimizer 8bit-adam --seed 42 \
 --task-name roneneldan/TinyStories \
 --load-pretrained-model false \
 --checkpoint-path ./model_ckpts/rwkv4-150m-cocktail \
