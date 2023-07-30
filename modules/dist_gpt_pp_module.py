@@ -47,6 +47,8 @@ class GPTStageBase(nn.Module):
                 from .flash_llama_modules import GPTEmbeddings, GPTBlock, GPTLMHead
             elif args.model_type == "h3":
                 from .h3.ssm_seq import GPTEmbeddings, GPTBlock, GPTLMHead
+            elif args.model_type == "rwkv4":
+                from .rwkv4_modules import GPTBlock, GPTEmbeddings, GPTLMHead
             else:
                 raise Exception("unknown")
         else:
@@ -76,7 +78,8 @@ class GPTStageBase(nn.Module):
 
     def _create_transformer_layer(self, layer_idx=0):
         config = deepcopy(self.config)
-        layer = self._GPTBlock(config, layer_id=layer_idx) # TODO: checkpoint
+        print(f">>> {config}") # DEBUG
+        layer = self._GPTBlock(config, layer_id=layer_idx, n_layer=config.n_layer) # TODO: checkpoint
         if self.load_pretrained_model:
             print(f'loading layer {layer_idx}')
             layer.load_state_dict(

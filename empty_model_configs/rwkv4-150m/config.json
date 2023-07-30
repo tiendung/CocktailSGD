@@ -1,0 +1,7 @@
+{
+  "model_type": "bloom",
+  "_name_or_path": "cocktail/rwkv4-150m",
+  "hidden_size": 768,
+  "n_layer": 16,
+  "vocab_size": 50272
+}
